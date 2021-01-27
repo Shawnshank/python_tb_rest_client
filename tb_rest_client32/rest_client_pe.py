@@ -86,7 +86,7 @@ class RestClientPE(RestClientBase):
         return self.entity_group_controller.get_entity_groups_by_type_using_get(group_type, **kwargs)
 
     def get_entity_groups_for_entity(self, entity_id: EntityId, **kwargs):
-        return self.entity_group_controller.get_entity_groups_for_entity_using_get(entity_id.entity_type, entity_id.id, **kwargs)
+        return self.entity_group_controller.get_entity_groups_for_entity_using_get(entity_id.entityType, entity_id.id, **kwargs)
 
     def get_group_entity(self, entity_group_id: EntityGroupId, entity_id: EntityId, **kwargs):
         return self.entity_group_controller.get_group_entity_using_get(entity_group_id.id, entity_id.id, **kwargs)
@@ -359,10 +359,10 @@ class RestClientPE(RestClientBase):
     """ OwnerController endpoints """
 
     def change_owner_to_customer(self, owner_id, entity_id: EntityId, **kwargs):
-        return self.owner_controller.change_owner_to_customer_using_post(owner_id.id, entity_id.entity_type, entity_id.id, **kwargs)
+        return self.owner_controller.change_owner_to_customer_using_post(owner_id.id, entity_id.entityType, entity_id.id, **kwargs)
 
     def change_owner_to_tenant(self, owner_id, entity_id: EntityId, **kwargs):
-        return self.owner_controller.change_owner_to_tenant_using_post(owner_id, entity_id.entity_type, entity_id.id, **kwargs)
+        return self.owner_controller.change_owner_to_tenant_using_post(owner_id, entity_id.entityType, entity_id.id, **kwargs)
 
     """ GroupPermissionController endpoints """
 
@@ -412,10 +412,10 @@ class RestClientPE(RestClientBase):
         return self.rule_engine_controller.handle_rule_engine_request_using_post(request_body, **kwargs)
 
     def handle_rule_engine_request1(self, entity_id: EntityId, timeout, request_body, **kwargs):
-        return self.rule_engine_controller.handle_rule_engine_request_using_post1(entity_id.entity_type, entity_id.id, timeout, request_body, **kwargs)
+        return self.rule_engine_controller.handle_rule_engine_request_using_post1(entity_id.entityType, entity_id.id, timeout, request_body, **kwargs)
 
     def handle_rule_engine_request2(self, entity_id: EntityId, request_body, **kwargs):
-        return self.rule_engine_controller.handle_rule_engine_request_using_post2(entity_id.entity_type, entity_id.id, request_body, **kwargs)
+        return self.rule_engine_controller.handle_rule_engine_request_using_post2(entity_id.entityType, entity_id.id, request_body, **kwargs)
 
     """ ConverterController endpoints """
 

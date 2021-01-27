@@ -249,46 +249,46 @@ class RestClientBase(Thread):
         return self.telemetry_controller.delete_entity_attributes_using_delete(device_id.id, scope, keys, **kwargs)
 
     def delete_entity_attributes1(self, entity_id: EntityId, scope, keys, **kwargs):
-        return self.telemetry_controller.delete_entity_attributes_using_delete1(entity_id.entity_type, entity_id.id, scope, keys, **kwargs)
+        return self.telemetry_controller.delete_entity_attributes_using_delete1(entity_id.entityType, entity_id.id, scope, keys, **kwargs)
 
     def delete_entity_timeseries(self, entity_id: EntityId, keys, **kwargs):
-        return self.telemetry_controller.delete_entity_timeseries_using_delete(entity_id.entity_type, entity_id.id, keys, **kwargs)
+        return self.telemetry_controller.delete_entity_timeseries_using_delete(entity_id.entityType, entity_id.id, keys, **kwargs)
 
     def get_attribute_keys_by_scope(self, entity_id: EntityId, scope, **kwargs):
-        return self.telemetry_controller.get_attribute_keys_by_scope_using_get(entity_id.entity_type, entity_id.id, scope, **kwargs)
+        return self.telemetry_controller.get_attribute_keys_by_scope_using_get(entity_id.entityType, entity_id.id, scope, **kwargs)
 
     def get_attribute_keys(self, entity_id: EntityId, **kwargs):
-        return self.telemetry_controller.get_attribute_keys_using_get(entity_id.entity_type, entity_id.id, **kwargs)
+        return self.telemetry_controller.get_attribute_keys_using_get(entity_id.entityType, entity_id.id, **kwargs)
 
     def get_attributes_by_scope(self, entity_id: EntityId, scope, **kwargs):
-        return self.telemetry_controller.get_attributes_by_scope_using_get(entity_id.entity_type, entity_id.id, scope, **kwargs)
+        return self.telemetry_controller.get_attributes_by_scope_using_get(entity_id.entityType, entity_id.id, scope, **kwargs)
 
     def get_attributes(self, entity_id: EntityId, **kwargs):
-        return self.telemetry_controller.get_attributes_using_get(entity_id.entity_type, entity_id.id, **kwargs)
+        return self.telemetry_controller.get_attributes_using_get(entity_id.entityType, entity_id.id, **kwargs)
 
     def get_latest_timeseries(self, entity_id: EntityId, **kwargs):
-        return self.telemetry_controller.get_latest_timeseries_using_get(entity_id.entity_type, entity_id.id, **kwargs)
+        return self.telemetry_controller.get_latest_timeseries_using_get(entity_id.entityType, entity_id.id, **kwargs)
 
     def get_timeseries_keys(self, entity_id: EntityId, **kwargs):
-        return self.telemetry_controller.get_timeseries_keys_using_get(entity_id.entity_type, entity_id.id, **kwargs)
+        return self.telemetry_controller.get_timeseries_keys_using_get(entity_id.entityType, entity_id.id, **kwargs)
 
     def get_timeseries(self, entity_id: EntityId, keys, start_ts, end_ts, **kwargs):
-        return self.telemetry_controller.get_timeseries_using_get(entity_id.entity_type, entity_id.id, keys, start_ts, end_ts, **kwargs)
+        return self.telemetry_controller.get_timeseries_using_get(entity_id.entityType, entity_id.id, keys, start_ts, end_ts, **kwargs)
 
     def save_device_attributes(self, device_id: DeviceId, scope, request, **kwargs):
         return self.telemetry_controller.save_device_attributes_using_post(device_id.id, scope, request, **kwargs)
 
     def save_entity_attributes_v1(self, entity_id: EntityId, scope, request, **kwargs):
-        return self.telemetry_controller.save_entity_attributes_v1_using_post(entity_id.entity_type, entity_id.id, scope, request, **kwargs)
+        return self.telemetry_controller.save_entity_attributes_v1_using_post(entity_id.entityType, entity_id.id, scope, request, **kwargs)
 
     def save_entity_attributes_v2(self, entity_id: EntityId, scope, request, **kwargs):
-        return self.telemetry_controller.save_entity_attributes_v2_using_post(entity_id.entity_type, entity_id.id, scope, request, **kwargs)
+        return self.telemetry_controller.save_entity_attributes_v2_using_post(entity_id.entityType, entity_id.id, scope, request, **kwargs)
 
     def save_entity_telemetry(self, entity_id: EntityId, scope, request_body, **kwargs):
-        return self.telemetry_controller.save_entity_telemetry_using_post(entity_id.entity_type, entity_id.id, scope, request_body, **kwargs)
+        return self.telemetry_controller.save_entity_telemetry_using_post(entity_id.entityType, entity_id.id, scope, request_body, **kwargs)
 
     def save_entity_telemetry_with_ttl(self, entity_id: EntityId, scope, ttl, request_body, **kwargs):
-        return self.telemetry_controller.save_entity_telemetry_with_ttl_using_post(entity_id.entity_type, entity_id.id, scope, ttl, request_body, **kwargs)
+        return self.telemetry_controller.save_entity_telemetry_with_ttl_using_post(entity_id.entityType, entity_id.id, scope, ttl, request_body, **kwargs)
 
     ##################################
 
@@ -298,10 +298,10 @@ class RestClientBase(Thread):
     ##################################
 
     def get_events(self, entity_id: EntityId, event_type, tenant_id: TenantId, page_size=100, page=0, **kwargs):
-        return self.event_controller.get_events_using_get(entity_id.entity_type, entity_id.id, event_type, tenant_id.id, str(page_size), str(page), **kwargs)
+        return self.event_controller.get_events_using_get(entity_id.entityType, entity_id.id, event_type, tenant_id.id, str(page_size), str(page), **kwargs)
 
     def get_events1(self, entity_id: EntityId, tenant_id: TenantId, page_size=100, page=0, **kwargs):
-        return self.event_controller.get_events_using_get1(entity_id.entity_type, entity_id.id, tenant_id.id, str(page_size), str(page), **kwargs)
+        return self.event_controller.get_events_using_get1(entity_id.entityType, entity_id.id, tenant_id.id, str(page_size), str(page), **kwargs)
 
     ##################################
 
@@ -459,7 +459,7 @@ class RestClientBase(Thread):
         return self.entity_relation_controller.delete_relation_using_delete(from_id, from_type, relation_type, to_id, to_type, **kwargs)
 
     def delete_relations(self, entity_id: EntityId, id, type, **kwargs):
-        return self.entity_relation_controller.delete_relations_using_delete(entity_id.id, entity_id.entity_type, id, type, **kwargs)
+        return self.entity_relation_controller.delete_relations_using_delete(entity_id.id, entity_id.entityType, id, type, **kwargs)
 
     def find_info_by_from(self, from_id, from_type, **kwargs):
         return self.entity_relation_controller.find_info_by_from_using_get(from_id, from_type, **kwargs)
@@ -502,10 +502,10 @@ class RestClientBase(Thread):
         return self.alarm_controller.get_alarm_info_by_id_using_get(alarm_id.id, **kwargs)
 
     def get_alarms(self, entity_id: EntityId, page_size=100, page=0, **kwargs):
-        return self.alarm_controller.get_alarms_using_get(entity_id.entity_type, entity_id.id, str(page_size), str(page), **kwargs)
+        return self.alarm_controller.get_alarms_using_get(entity_id.entityType, entity_id.id, str(page_size), str(page), **kwargs)
 
     def get_highest_alarm_severity(self, entity_id: EntityId, **kwargs):
-        return self.alarm_controller.get_highest_alarm_severity_using_get(entity_id.entity_type, entity_id.id, **kwargs)
+        return self.alarm_controller.get_highest_alarm_severity_using_get(entity_id.entityType, entity_id.id, **kwargs)
 
     def save_alarm(self, alarm, **kwargs):
         return self.alarm_controller.save_alarm_using_post(alarm, **kwargs)
@@ -570,7 +570,7 @@ class RestClientBase(Thread):
         return self.audit_log_controller.get_audit_logs_by_customer_id_using_get(customer_id.id, str(page_size), str(page), **kwargs)
 
     def get_audit_logs_by_entity_id(self, entity_id: EntityId, page_size=100, page=0, **kwargs):
-        return self.audit_log_controller.get_audit_logs_by_entity_id_using_get(entity_id.entity_type, entity_id.id, str(page_size), str(page), **kwargs)
+        return self.audit_log_controller.get_audit_logs_by_entity_id_using_get(entity_id.entityType, entity_id.id, str(page_size), str(page), **kwargs)
 
     def get_audit_logs_by_user_id(self, user_id: UserId, page_size=100, page=0, **kwargs):
         return self.audit_log_controller.get_audit_logs_by_user_id_using_get(user_id.id, str(page_size), str(page), **kwargs)
